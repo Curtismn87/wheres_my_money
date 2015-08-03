@@ -3,7 +3,11 @@ this is the stores show page
 
 <h3>
   <ul>
-    <% @store.items.each do |song| %>
-    <li> <%= song.name %>: $<%= song.amount%> </li>
-
+    <% @store.update(total_spent: 0) %>
+    <% @store.items.each do |items| %>
+      <li> <%= items.name %>: $<%= items.amount%> </li>
+      <% @store.total_spent += items.amount %>
+      <% @store.update(total_spent: @store.total_spent) %>
     <% end %>
+  </ul>
+  <p>Total spent: $<%= @store.total_spent %> </p>

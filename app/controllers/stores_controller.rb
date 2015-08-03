@@ -6,4 +6,14 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
   end
 
+def storeAmount
+  @store = Store.find(params[:id])
+  @store.items.each do |items|
+    @store.total_spent = items.amount
+    @store.update()
+  end
+end
+
+
+
 end
