@@ -1,0 +1,11 @@
+This is the new page
+
+<%= form_for(@store) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.hidden_field :total_spent, :value => 0 %>
+
+  <%= f.submit %>
+<% end  %>
