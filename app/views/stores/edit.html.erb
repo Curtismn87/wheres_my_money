@@ -1,9 +1,14 @@
 <h1> Edit "<%= @store.name %>" </h1>
-
+<h2>
 <%= form_for @store do |f| %>
 
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br>
 
   <%= f.submit %>
 <% end  %>
+
+<%= form_for(@store, method: :delete) do |f| %>
+    <%= f.submit "Delete Store", class: "delete" %>
+  <% end  %>
+</h2>
