@@ -1,0 +1,9 @@
+this is the stores show page
+<h1> <%= @store.name %> </h1>
+
+<h3>
+  <ul>
+    <% @store.items.each do |song| %>
+    <li> <%= song.name %>: $<%= song.amount%> </li>
+
+    <% end %>
