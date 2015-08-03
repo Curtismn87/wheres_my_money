@@ -1,8 +1,12 @@
-This is the stores index page
+<h1>Stores</h1>
 
-
+<h3>
 <ul>
   <% @stores.each do |store| %>
-  <li><%= link_to store.name, store_path(store) %> $<%= store.total_spent %> </li>
+  <li><%= link_to store.name, store_path(store) %><br>
+    Total: $<%= store.total_spent %> </li>
+    <% @grandTotal = @grandTotal + store.total_spent %>
   <% end %>
+  <p>Total Spent: $<%= @grandTotal %>
 </ul>
+</h3>

@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
+    @grandTotal = 0
   end
   def show
     @store = Store.find(params[:id])
