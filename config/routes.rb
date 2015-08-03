@@ -3,4 +3,5 @@ Rails.application.routes.draw do
     resources :items
   end
 
+  get "/budget", to: "budgets#show"
 end
