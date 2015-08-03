@@ -1,0 +1,14 @@
+<h1> Add New Item for <%= @store.name %> </h1>
+<h2>
+<%= form_for [@store, @item] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :amount %>
+  $<%= f.text_field :amount %>
+
+
+  <%= f.submit %>
+<% end  %>
+</h2>

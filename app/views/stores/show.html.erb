@@ -5,9 +5,10 @@
   <ul>
     <% @store.update(total_spent: 0) %>
     <% @store.items.each do |items| %>
-      <li> <%= items.name %>: $<%= items.amount%> </li>
+      <li> <%= items.name %>: $<%= items.amount%> - <%= link_to "edit item", "/stores/#{@store.id}/items/#{items.id}/edit" %> </li>
       <% @store.total_spent += items.amount %>
       <% @store.update(total_spent: @store.total_spent) %>
     <% end %>
+    <%= link_to "Add Item", "/stores/#{@store.id}/items/new" %>
   </ul>
   <p>Total spent: $<%= @store.total_spent %> </p>

@@ -1,0 +1,19 @@
+<h1>Edit <%= @item.name %> </h1>
+<h2>
+<%= form_for [@store, @item] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :amount %>
+  $<%= f.text_field :amount %><br>
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_for [@store, @item], method: :delete do |f| %>
+    <%= f.submit "Delete Item", class: "delete" %>
+  <% end %>
+
+
+</h2>

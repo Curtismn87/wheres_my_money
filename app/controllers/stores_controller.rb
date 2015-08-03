@@ -1,4 +1,6 @@
 class StoresController < ApplicationController
+# Will not update total_spent if individual store page isn't loaded  
+
   def index
     @stores = Store.all
     @grandTotal = 0
