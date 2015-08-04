@@ -4,11 +4,16 @@
 <h2>
 Enter each store in the box (if you can't remember, submit anyway):
 <form action="/budget/check" method="get">
-  <% Store.all.each do %>
-  <input type="text" name="checker[]" placeholder="Enter a store" />
-  <% end %>
+    <% Store.all.each do %>
+      <input type="text" name="checker[]" placeholder="Enter a store" />
+    <% end %>
   <input type="submit" />
 </form>
 </h2>
-
- <%= @checker %>
+<h3>So far you have spent: $<%= @total_spent %> </h3>
+<h3>These are the stores you guessed right:</h3>
+ <ul>
+ <% @checker.each do |store| %>
+    <li><%= store %></li>
+ <% end %>
+ <ul>
