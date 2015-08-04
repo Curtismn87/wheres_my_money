@@ -1,3 +1,12 @@
-This is the budgets page
+<h1>Try to remember where you spent your money</h1>
 
-<button id="button">Click me!</button>
+
+<h2>
+Enter stores you shop at:
+<form action="/budget/check" method="post">
+  <input type="text" name="checker" placeholder="Enter a store" />
+  <input type="submit" />
+</form>
+</h2>
+
+ <%= @checker %>
