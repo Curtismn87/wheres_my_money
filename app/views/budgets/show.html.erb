@@ -1,10 +1,12 @@
-<h1>Try to remember where you spent your money</h1>
+<h1>Each box represents a store you shopped at</h1>
 
 
 <h2>
-Enter stores you shop at:
-<form action="/budget/check" method="post">
-  <input type="text" name="checker" placeholder="Enter a store" />
+Enter each store in the box (if you can't remember, submit anyway):
+<form action="/budget/check" method="get">
+  <% Store.all.each do %>
+  <input type="text" name="checker[]" placeholder="Enter a store" />
+  <% end %>
   <input type="submit" />
 </form>
 </h2>

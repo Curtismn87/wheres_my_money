@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   end
 
   get "/budget", to: "budgets#show"
-  post "/budget/check", to: "budgets#check"
+  get "/budget/check", to: "budgets#check"
 end
