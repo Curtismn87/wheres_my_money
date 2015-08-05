@@ -1,19 +1,28 @@
 <h1>Each box represents a store you shopped at</h1>
 
-
 <h2>
 Enter each store in the box (if you can't remember, submit anyway):
 <form action="/budget/check" method="get">
     <% Store.all.each do %>
       <input type="text" name="checker[]" placeholder="Enter a store" />
     <% end %>
-  <input type="submit" />
+  <input id="budget_submit" type="submit" />
 </form>
 </h2>
-<h3>So far you have spent: $<%= @total_spent %> </h3>
-<h3>These are the stores you guessed right:</h3>
- <ul>
- <% @checker.each do |store| %>
-    <li><%= store %></li>
- <% end %>
- <ul>
+<h3>So far you have spent: $<%= @total_spent %></h3>
+  <div class="budget_guess">
+    <h3>These are the stores you guessed right:</h3>
+    <ul>
+      <% @right_guess.each do |store| %>
+        <li><%= store %></li>
+      <% end %>
+    <ul>
+  </div>
+  <div class="money_left">
+    <h3>So you know where $<%= @guess_spent %> is, but where is the other $<%= @total_spent - @guess_spent %>?</h3>
+  <h3>Forgot about these stores?
+     <% @wrong_guess.each do |store| %>
+        <li><%= store %></li>
+      <% end %>
+  </h3>
+  </div>

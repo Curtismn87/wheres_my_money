@@ -15,6 +15,15 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
+  $("money_left").hide();
+  $("budget_guess").hide();
+
+
+  $("#budget_submit").on("click", function(){
+    console.log("Hello");
+    $("money_left").show();
+    $("budget_guess").show();
+  });
 
 
 });
