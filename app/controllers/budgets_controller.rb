@@ -17,7 +17,7 @@ class BudgetsController < ApplicationController
     @guess_spent = 0
     Store.all.each do |store|
       @user_input.each do |input|
-        if store.name == input
+        if store.name.casecmp(input) == input.casecmp(store.name)
           @right_guess.push(store.name)
           @guess_spent = @guess_spent + store.total_spent
         end
@@ -25,7 +25,7 @@ class BudgetsController < ApplicationController
     end
     @wrong_guess.each do |wrong|
       @right_guess.each do |right|
-        if wrong == right
+        if wrong.casecmp(right) == right.casecmp(wrong)
           @wrong_guess.delete(right)
         end
       end
