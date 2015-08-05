@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get "/budget", to: "budgets#show"
   get "/budget/check", to: "budgets#check"
+  get "/about", to: "about#show"
 end

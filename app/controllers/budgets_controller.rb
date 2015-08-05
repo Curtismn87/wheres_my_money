@@ -23,8 +23,8 @@ class BudgetsController < ApplicationController
         end
       end
     end
-    @wrong_guess.each do |wrong|
-      @right_guess.each do |right|
+    @right_guess.each do |right|
+      @wrong_guess.each do |wrong|
         if wrong.casecmp(right) == right.casecmp(wrong)
           @wrong_guess.delete(right)
         end

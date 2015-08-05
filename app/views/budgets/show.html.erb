@@ -19,8 +19,8 @@ Enter each store in the box (if you can't remember, submit anyway):
     <ul>
   </div>
   <div class="money_left">
-    <h3>So you know where $<%= @guess_spent %> is, but where is the other $<%= @total_spent - @guess_spent %>?</h3>
-  <h3>Forgot about these stores?</h3>
+<h3>So you know where <span style="color:green">$<%= @guess_spent %></span> is, but where is the other <span style="color:red">$<%= @total_spent - @guess_spent %></span>?</h3>
+<h3>Forgot about these stores?</h3>
     <ul>
      <% @wrong_guess.each do |store| %>
         <li><%= store %></li>
