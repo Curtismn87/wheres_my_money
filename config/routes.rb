@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'stores#index'
+  devise_for :users
   resources :stores do
     resources :items
   end

@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
-# Will not update total_spent if individual store page isn't loaded  
+# Will not update total_spent if individual store page isn't loaded
+before_action :set_post, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, only: [:index, :create, :edit, :update, :destroy]
 
   def index
     @stores = Store.all
