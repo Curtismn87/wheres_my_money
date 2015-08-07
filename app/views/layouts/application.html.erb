@@ -10,8 +10,8 @@
 <body>
   <nav>
     <div class ="main_nav">
-    <a href="/budget">Where's my money</a>
     <a href="/stores">Stores</a>
+    <a href="/budget">Where's my money</a>
     <a href="/about">About</a>
   <% if current_user %>
     <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
