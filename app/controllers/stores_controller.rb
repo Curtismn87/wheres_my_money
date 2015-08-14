@@ -3,6 +3,9 @@ class StoresController < ApplicationController
 before_action :set_post, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!, only: [:index, :create, :edit, :update, :destroy]
 
+  # AM: Interesting approach to tallying up total spending!
+  # AM: Do you think you could condense that functionality into a method so that it's in your Store model and not the view?
+
   def index
     @stores = Store.all
     @grandTotal = 0

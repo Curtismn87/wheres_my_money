@@ -9,6 +9,11 @@ before_action :authenticate_user!
     calculate_total_spent
   end
 
+  # AM: You use a lot of business logic in your budgets controller. I think you would benefit from delegating a lot of this to a Budget model.
+  # AM: It doesn't need to be an ActiveRecord model. It can have no connection to the database.
+
+  # AM: Did not know `casecmp` was a thing!
+
   def check
     calculate_total_spent
     wrong_guess
