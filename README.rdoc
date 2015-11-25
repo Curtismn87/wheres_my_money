@@ -1,11 +1,1 @@
-As a user I want
-
-  1. To be able to add the stores I shop at
-  2. To be able to add the items I buy
-  3. To be able to add how much I spent at the store
-  4. To be able to add how much I spent on the items
-  5. To be able to lookup how much I spent at the stores
-  6. To be able to lookup how much I spent on the items
-  7. To be able to look up the stores I went too
-  8. To be able to lookup the items I bought
-  9. To see what it was that I didn't remember
+This is a CRUD application for creating a budget. This application then helps you identify excess spending through the use of relationships. 
