@@ -2,6 +2,9 @@ class StoresController < ApplicationController
 # Will not update total_spent if individual store page isn't loaded
 before_action :authenticate_user!, only: [:index, :create, :edit, :update, :destroy]
 
+  # AM: Interesting approach to tallying up total spending!
+  # AM: Do you think you could condense that functionality into a method so that it's in your Store model and not the view?
+
   def index
     @stores = Store.all
     @grandTotal = 0
